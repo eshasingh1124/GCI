@@ -1,0 +1,28 @@
+// C++ program to count maximum consecutive 1s 
+#include<bits/stdc++.h> 
+using namespace std; 
+  // Returns count of maximum consecutive 1's 
+int maxconsec(bool arr[], int n) 
+{ 
+    int cnt = 0; //intitialize count 
+    int result = 0; //initialize max 
+  
+    for (int i = 0; i < n; i++) 
+    { 
+        // Reset cnt when 0 is found 
+        if (arr[i] == 0) 
+            cnt = 0; 
+  
+        // If 1 is found, cnt++ 
+        // and update result if cnt becomes greater
+         
+        else
+        { 
+            cnt++;//increase cnt 
+            result = max(result, cnt); 
+        } 
+    } 
+  
+    return result; 
+} 
+  
