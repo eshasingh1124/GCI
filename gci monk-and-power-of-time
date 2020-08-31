@@ -1,0 +1,38 @@
+//monk-and-power-of-time
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{	
+	int n,a;
+	cin>>n;
+	queue<int>A,B;
+	for (int i=0;i<n;i++)
+	{
+		cin>>a;
+		A.push(a);
+	}
+	for (int i=0;i<n;i++)
+	{
+		cin>>a;
+		B.push(a);
+	}
+	int count=0;
+	while(!A.empty())
+	{
+		if (A.front()==B.front())
+		{
+			A.pop();
+			B.pop();
+			count++;
+		}
+		else 
+		{
+			A.push(A.front());
+			A.pop();
+			count++;
+		}
+	}
+	cout<<count;
+	return 0;
+}
