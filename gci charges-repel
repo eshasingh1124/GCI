@@ -1,0 +1,35 @@
+//charges-repel
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+	int n;
+	string s;
+	string res="";
+	stack<char>st;     
+	  cin>>n;
+	  cin>>s;
+	  for(char c:s){
+		  if(st.empty()){
+			  st.push(c);
+		  }
+		  else{
+			  if(st.top()==c)
+			  	st.pop();
+			else{
+				st.push(c);
+			}
+		  }
+		 
+	  }
+	   while(!st.empty()){
+			  char c=st.top();
+ 
+			  res=c+res;
+              st.pop();
+		  }
+          int n1=res.size();
+          cout<<n1<<endl;
+		  cout<<res;
+          return 0;
+ 
+}
