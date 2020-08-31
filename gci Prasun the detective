@@ -1,0 +1,56 @@
+//Prasun the detective
+#include<bits/stdc++.h>
+using namespace std;
+ 
+int main()
+{
+    string s1,s2;
+    getline(cin,s1);
+    getline(cin,s2);
+   
+    map<char,int>m;
+ 
+    for(int i=0;i<s1.length();i++)
+    {
+        if(s1[i]>=65 && s1[i]<=92)
+        {
+            s1[i]=s1[i]+32;
+        }
+        if(s1[i]>'a' && s1[i]<'z')
+        {
+            m[s1[i]]++;
+        }
+        else
+        {
+            continue;
+        }
+        
+    }
+    
+    for(int i=0;i<s2.length();i++)
+    {
+        if(s2[i]>=65 && s2[i]<=92)
+        {
+            s2[i]=s2[i]+32;
+        }
+        if(s2[i]>'a' && s2[i]<'z')
+        m[s2[i]]--;
+    }
+    
+    int flag=0;
+    for(auto i=m.begin();i!=m.end();i++)
+    {
+        if(i->second==0)
+        {
+            flag=1;
+        }
+        else
+        {
+            flag=0;
+            cout<<"NO"<<endl;
+            break;
+        }
+    }
+    if(flag==1)
+    cout<<"YES"<<endl;
+}
